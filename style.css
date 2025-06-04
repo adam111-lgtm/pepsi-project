@@ -1,0 +1,242 @@
+/* ==========basics======== */
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow: hidden;
+    background-color: rgb(24, 24, 244);
+}
+
+ul{
+    list-style: none;
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.home{
+    height: 100vh;
+    color: white;
+}
+.container .logo img{
+    display: block;
+    width: 70px;
+    height: 70px;
+}
+.container{
+    margin: auto;
+    width: 1220px;
+    height: 100vh;
+}
+/* ======header======= */
+header{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+header ul li{
+    display: inline-block;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+/* ========main======= */
+main{
+    display: grid;
+    padding: 10px;
+    height: 500px;
+    grid-template-areas: "word word word word word word word word word word pepsi social";
+    margin-bottom: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+main h2{
+    text-transform: capitalize;
+}
+main h2 span{
+    font-size: 48px;
+}
+main p{
+    white-space: normal;
+    width: 500px;
+    padding: 0 0 10px 0;
+}
+.word{
+    grid-area: word;
+}
+main  img{
+    display: inline-block;
+    width: 350px;
+    height: 375px;
+    grid-area: pepsi;
+    animation-name: pepsi;
+    animation-duration: 1s;
+    position: relative;
+}
+main .btn{
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    background-color: rgb(24, 24, 244);
+    border: 2px solid white;
+    padding: 10px 15px;
+}
+main .btn:hover{
+    color: blue;
+    background-color: white;
+    border: 1px solid rgb(24, 24, 244);
+}
+.social {
+    grid-area: social;
+    display: grid;
+    justify-content: end;
+    animation-name: social;
+    animation-duration: 1s;
+    position: relative;
+    transition: 1s;
+}
+/* ======footer======= */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: footer 1s;
+}
+img{
+    width: 100px;
+}
+/* ======animation========= */
+@keyframes  pepsi{
+    from{
+        transform: translateX(450px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes  social{
+    from{
+        transform: translateX(450px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes  footer{
+    from{
+        transform: translateY(450px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+/* ========== Media Queries ========== */
+
+/* الهواتف المحمولة */
+@media (max-width: 767px) {
+    body{
+        overflow: scroll;
+        background-color: rgb(24, 24, 244);
+    }
+    .home{
+        background-size: 100%;
+    }
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul {
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    header ul li {
+        display: block;
+        padding: 10px 0;
+        font-size: 20px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    main p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    main img {
+        width: 250px;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    main h2 span {
+        font-size: 32px;
+    }
+
+    .social {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    footer img {
+        width: 80px;
+    }
+}
+
+/* التابلت */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body{
+        overflow: scroll;
+    }
+    .container {
+        width: 90%;
+        padding: 0 20px;
+    }
+
+    header ul li {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    main {
+        grid-template-areas:
+            "word word word word word word"
+            "pepsi pepsi pepsi social social social";
+        grid-template-columns: repeat(6, 1fr);
+        height: auto;
+    }
+
+    main p {
+        width: 100%;
+    }
+
+    main img {
+        width: 300px;
+        height: auto;
+        margin: 10px 0 0 0;
+    }
+
+    .social {
+        justify-content: end;
+        margin-top: 20px;
+    }
+}
+
+
